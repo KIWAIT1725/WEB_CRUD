@@ -1,0 +1,380 @@
+:root {
+  --primary-color: #405de6;
+  --secondary-color: #5851db;
+  --gradient: linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
+  --text-color: #262626;
+  --text-secondary: #8e8e8e;
+  --background: #fafafa;
+  --white: #ffffff;
+  --border-color: #dbdbdb;
+  --error-color: #ed4956;
+  --link-color: #00376b;
+}
+
+[data-theme="dark"] {
+  --text-color: #ffffff;
+  --text-secondary: #a8a8a8;
+  --background: #000000;
+  --white: #262626;
+  --border-color: #363636;
+  --link-color: #e0f1ff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background-color: var(--background);
+  color: var(--text-color);
+  line-height: 1.6;
+  transition: all 0.3s ease;
+}
+
+.container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: var(--white);
+  border-bottom: 1px solid var(--border-color);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.instagram-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.instagram-logo i {
+  background: var(--gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-size: 2rem;
+}
+
+.logo-text {
+  background: var(--gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-family: "Billabong", cursive;
+  font-size: 2rem;
+}
+
+.theme-toggle {
+  display: flex;
+  align-items: center;
+}
+
+.theme-btn {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  color: var(--text-color);
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.theme-btn:hover {
+  background-color: var(--border-color);
+}
+
+/* Main Content */
+.main-content {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+.auth-container {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  max-width: 1200px;
+  width: 100%;
+}
+
+.phone-mockup {
+  flex: 1;
+  max-width: 400px;
+}
+
+.phone-mockup img {
+  width: 100%;
+  height: auto;
+}
+
+.auth-forms {
+  flex: 1;
+  max-width: 350px;
+  width: 100%;
+}
+
+.form-container {
+  background-color: var(--white);
+  border: 1px solid var(--border-color);
+  border-radius: 1px;
+  padding: 2rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.form-header {
+  margin-bottom: 2rem;
+}
+
+.instagram-logo-form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.instagram-logo-form i {
+  background: var(--gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-size: 2.5rem;
+}
+
+.instagram-logo-form span {
+  background: var(--gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-family: "Billabong", cursive;
+  font-size: 2.5rem;
+}
+
+.signup-text {
+  color: var(--text-secondary);
+  font-weight: 600;
+  font-size: 1.1rem;
+  line-height: 1.4;
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.input-group {
+  position: relative;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid var(--border-color);
+  border-radius: 3px;
+  background-color: var(--background);
+  color: var(--text-color);
+  font-size: 0.875rem;
+  transition: border-color 0.3s ease;
+}
+
+.input-group input:focus {
+  outline: none;
+  border-color: var(--text-secondary);
+}
+
+.input-group input::placeholder {
+  color: var(--text-secondary);
+}
+
+.btn-primary {
+  background: var(--gradient);
+  color: white;
+  border: none;
+  padding: 0.75rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.875rem;
+  cursor: pointer;
+  margin-top: 1rem;
+  transition: opacity 0.3s ease;
+}
+
+.btn-primary:hover {
+  opacity: 0.9;
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  margin: 1.5rem 0;
+  color: var(--text-secondary);
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.divider::before,
+.divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background-color: var(--border-color);
+}
+
+.divider span {
+  padding: 0 1rem;
+}
+
+.facebook-login {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  color: #385185;
+  font-weight: 600;
+  font-size: 0.875rem;
+  cursor: pointer;
+  margin-bottom: 1rem;
+}
+
+.facebook-login i {
+  font-size: 1.2rem;
+}
+
+.forgot-password a {
+  color: var(--link-color);
+  text-decoration: none;
+  font-size: 0.75rem;
+}
+
+.register-link,
+.login-link {
+  padding: 1.5rem 2rem;
+}
+
+.register-link p,
+.login-link p {
+  font-size: 0.875rem;
+}
+
+.register-link a,
+.login-link a {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.terms {
+  color: var(--text-secondary);
+  font-size: 0.75rem;
+  line-height: 1.4;
+  margin-top: 1rem;
+}
+
+.terms a {
+  color: var(--text-secondary);
+  text-decoration: none;
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* Footer */
+.footer {
+  background-color: var(--background);
+  padding: 2rem;
+  text-align: center;
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.footer-links a {
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 0.75rem;
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  color: var(--text-secondary);
+  font-size: 0.75rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .auth-container {
+    flex-direction: column;
+  }
+
+  .phone-mockup {
+    display: none;
+  }
+
+  .header {
+    padding: 1rem;
+  }
+
+  .main-content {
+    padding: 1rem;
+  }
+
+  .footer-links {
+    gap: 0.5rem;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.form-container {
+  animation: fadeIn 0.5s ease;
+}
